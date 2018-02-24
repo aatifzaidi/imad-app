@@ -8,6 +8,8 @@ button.onclick = function(){
     //Capture the response and store it in a variable 
     request.onreadystatechange = function(){
        if(request.readyState === XMLHttpRequest.Done){
+           
+           //Take some action
            if(request.status === 200){
                var counter = request.responseText;
                var span = document.getElementById('count');
@@ -19,6 +21,6 @@ button.onclick = function(){
     
     //Make the request
     
-    request.open('GET',"http://aatifsuntech.imad.hasura-app.io/",true);
+    request.open('GET',"http://aatifsuntech.imad.hasura-app.io/counter",true);
     request.send(null);
 };
