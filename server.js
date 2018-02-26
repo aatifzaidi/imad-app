@@ -8,7 +8,7 @@ var config = {
     database:'aatifsuntech',
     host:'db.imad.hasura-app.io',
     port:'5432',
-    password:process.env.DB_PASSWORD
+    password:'db-aatifsuntech-43713'
 };
 
 var app = express();
