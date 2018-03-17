@@ -138,19 +138,6 @@ app.get('/test-db', function(req,res){
         }
         
     });
-});ol(config);
-app.get('/test-db', function(req,res){
-    //make a select response
-    //return a response with the results
-    pool.query('SELECT * FROM emp',function(err,result){
-        if(err){
-            res.status(500).send(err.toString());
-        }
-        else {
-            res.send(JSON.stringify(result.rows));
-        }
-        
-    });
 });
 
 var counter = 0;
