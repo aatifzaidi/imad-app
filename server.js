@@ -63,20 +63,6 @@ function createTemplate(data){
     return htmlTemplate;
 }
 
-var pool = new Pool(config);
-app.get('/test-db', function(req,res){
-    //make a select response
-    //return a response with the results
-    pool.query('SELECT * FROM emp',function(err,result){
-        if(err){
-            res.status(500).send(err.toString());
-        }
-        else {
-            res.send(JSON.stringify(result.rows));
-        }
-        
-    });
-});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -135,6 +121,21 @@ app.post('/login', function(req,res){
                 }
                 
             }
+        
+    });
+});
+
+var pool = new Pool(config);
+app.get('/test-db', function(req,res){
+    //make a select response
+    //return a response with the results
+    pool.query('SELECT * FROM emp',function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else {
+            res.send(JSON.stringify(result.rows));
+        }
         
     });
 });
